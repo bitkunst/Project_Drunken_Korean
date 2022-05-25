@@ -1,0 +1,26 @@
+{
+  "Toast": {
+    "easy": [
+      {
+        "keyword": "사우나",
+        "content": "사랑과 우정을 나누자."
+      }
+    ],
+    "hard": [
+      {
+        "keyword": "항아리",
+        "content": "항상 아름다운 이 자리를 위하여"
+      }
+    ]
+  },
+  "Game": [
+    {
+      "keyword": "배스킨 라빈스 31",
+      "content": "brbrbr"
+    },
+    {
+      "keyword": "배스킨 라빈스 31",
+      "content": "ㅋㅋㅋㅋ"
+    }
+  ]
+}
