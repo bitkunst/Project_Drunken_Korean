@@ -6,10 +6,13 @@ import ToastDescScreen from "./src/screens/toast/ToastDescScreen";
 import GameScreen from "./src/screens/game/GameScreen";
 import GameDescScreen from "./src/screens/game/GameDescScreen";
 import { headerOptions } from "./src/public/styles";
+import { getFont } from "./src/public/styles";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  getFont();
+
   return (
     <NavigationContainer>
       <Stack.Navigator>

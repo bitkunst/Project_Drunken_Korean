@@ -1,4 +1,11 @@
 import { StyleSheet, Button, Alert } from "react-native";
+import * as Font from "expo-font";
+
+export const getFont = async () => {
+  await Font.loadAsync({
+    title: require("./font/DeogonPrincessClassic.otf"),
+  });
+};
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,6 +13,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    fontFamily: "title",
   },
 });
 
