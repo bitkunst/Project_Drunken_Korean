@@ -1,11 +1,4 @@
-import { StyleSheet, Button, Alert } from "react-native";
-import * as Font from "expo-font";
-
-export const getFont = async () => {
-  await Font.loadAsync({
-    title: require("./font/DeogonPrincessClassic.otf"),
-  });
-};
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
@@ -13,7 +6,23 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    fontFamily: "title",
+  },
+  titleSt: {
+    fontFamily: "Deogon",
+    fontSize: 100,
+  },
+  contentSt: {
+    fontFamily: "Eulyoo",
+    fontSize: 30,
+  },
+  gameBtn: {
+    fontFamily: "Deogon",
+    borderStyle: "dashed",
+    borderWidth: 2,
+    borderRadius: 5,
+    // flex: 1,
+    height: 70,
+    fontSize: 50,
   },
 });
 

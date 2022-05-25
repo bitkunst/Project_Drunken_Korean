@@ -1,15 +1,17 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View } from "react-native";
 import ToastBtn from "../../components/ToastBtn";
+import { Entypo } from "@expo/vector-icons";
 
 const ToastScreen = ({ navigation }) => {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <Button
+        <Entypo
+          name="home"
+          size={40}
+          color="black"
           onPress={() => navigation.navigate("Home")}
-          title="HOME"
-          color="#000000"
         />
       ),
     });

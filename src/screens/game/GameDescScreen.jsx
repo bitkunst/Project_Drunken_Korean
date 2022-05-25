@@ -1,14 +1,17 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { ScrollView, Text, Button } from "react-native";
+import { styles } from "../../public/styles";
+import { Entypo } from "@expo/vector-icons";
 
 const GameDescScreen = ({ navigation, route }) => {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <Button
+        <Entypo
+          name="home"
+          size={40}
+          color="black"
           onPress={() => navigation.navigate("Home")}
-          title="HOME"
-          color="#000000"
         />
       ),
     });
@@ -16,9 +19,9 @@ const GameDescScreen = ({ navigation, route }) => {
 
   const { content } = route.params;
   return (
-    <View>
-      <Text>{content}</Text>
-    </View>
+    <ScrollView>
+      <Text style={styles.contentSt}>{content}</Text>
+    </ScrollView>
   );
 };
 

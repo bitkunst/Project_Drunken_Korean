@@ -1,16 +1,15 @@
-import { View, Button } from "react-native";
+import { View, Pressable, Text } from "react-native";
+import { styles } from "../public/styles";
 
 const ToastBtn = ({ navigation }) => {
   return (
     <View>
-      <Button
-        title="회식 자리"
-        onPress={() => navigation.navigate("ToastDesc")}
-      />
-      <Button
-        title="편한 자리"
-        onPress={() => navigation.navigate("ToastDesc")}
-      />
+      <Pressable onPress={() => navigation.navigate("ToastDesc")}>
+        <Text style={styles.titleSt}>회식 자리</Text>
+      </Pressable>
+      <Pressable onPress={() => navigation.navigate("ToastDesc")}>
+        <Text style={styles.titleSt}>편한 자리</Text>
+      </Pressable>
     </View>
   );
 };
