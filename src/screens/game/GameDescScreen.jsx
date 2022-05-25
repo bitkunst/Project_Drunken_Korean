@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollView, Text, Button } from "react-native";
 import { styles } from "../../public/styles";
 import { Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const GameDescScreen = ({ navigation, route }) => {
   React.useLayoutEffect(() => {
@@ -9,9 +10,17 @@ const GameDescScreen = ({ navigation, route }) => {
       headerRight: () => (
         <Entypo
           name="home"
-          size={40}
+          size={35}
           color="black"
           onPress={() => navigation.navigate("Home")}
+        />
+      ),
+      headerLeft: () => (
+        <Ionicons
+          name="arrow-back"
+          size={35}
+          color="black"
+          onPress={() => navigation.goBack()}
         />
       ),
     });

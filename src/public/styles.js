@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+const { height, width } = Dimensions.get("screen");
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,6 +7,9 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  header: {
+    flex: 1,
   },
   titleSt: {
     fontFamily: "Deogon",
@@ -26,6 +30,19 @@ export const styles = StyleSheet.create({
   },
 });
 
-export const headerOptions = {
+export const homeHeaderOptions = {
   headerShown: false,
+};
+
+export const headerOptions = {
+  //   headerTransparent: true,
+  headerStyle: {
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+  title: null,
+  headerShadowVisible: false,
+  headerBackTitleVisible: false,
+  headerTransparent: true,
 };

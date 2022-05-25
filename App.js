@@ -6,7 +6,7 @@ import ToastScreen from "./src/screens/toast/ToastScreen";
 import ToastDescScreen from "./src/screens/toast/ToastDescScreen";
 import GameScreen from "./src/screens/game/GameScreen";
 import GameDescScreen from "./src/screens/game/GameDescScreen";
-import { headerOptions } from "./src/public/styles";
+import { homeHeaderOptions, headerOptions } from "./src/public/styles";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
 
@@ -40,12 +40,28 @@ export default function App() {
             <Stack.Screen
               name="Home"
               component={HomeScreen}
+              options={{ ...homeHeaderOptions }}
+            />
+            <Stack.Screen
+              name="Toast"
+              component={ToastScreen}
               options={{ ...headerOptions }}
             />
-            <Stack.Screen name="Toast" component={ToastScreen} />
-            <Stack.Screen name="Game" component={GameScreen} />
-            <Stack.Screen name="GameDesc" component={GameDescScreen} />
-            <Stack.Screen name="ToastDesc" component={ToastDescScreen} />
+            <Stack.Screen
+              name="Game"
+              component={GameScreen}
+              options={{ ...headerOptions }}
+            />
+            <Stack.Screen
+              name="GameDesc"
+              component={GameDescScreen}
+              options={{ ...headerOptions }}
+            />
+            <Stack.Screen
+              name="ToastDesc"
+              component={ToastDescScreen}
+              options={{ ...headerOptions }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       )}

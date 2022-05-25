@@ -3,6 +3,7 @@ import { View, Text, Button } from "react-native";
 import data from "../../../data/data";
 import { styles } from "../../public/styles";
 import { Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const easyToast = data["Toast"]["easy"];
 const words = easyToast[0];
@@ -13,9 +14,17 @@ const ToastDescScreen = ({ navigation }) => {
       headerRight: () => (
         <Entypo
           name="home"
-          size={40}
+          size={35}
           color="black"
           onPress={() => navigation.navigate("Home")}
+        />
+      ),
+      headerLeft: () => (
+        <Ionicons
+          name="arrow-back"
+          size={35}
+          color="black"
+          onPress={() => navigation.goBack()}
         />
       ),
     });

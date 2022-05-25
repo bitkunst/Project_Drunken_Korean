@@ -2,6 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import ToastBtn from "../../components/ToastBtn";
 import { Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const ToastScreen = ({ navigation }) => {
   React.useLayoutEffect(() => {
@@ -9,15 +10,23 @@ const ToastScreen = ({ navigation }) => {
       headerRight: () => (
         <Entypo
           name="home"
-          size={40}
+          size={35}
           color="black"
           onPress={() => navigation.navigate("Home")}
+        />
+      ),
+      headerLeft: () => (
+        <Ionicons
+          name="arrow-back"
+          size={35}
+          color="black"
+          onPress={() => navigation.goBack()}
         />
       ),
     });
   }, [navigation]);
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <ToastBtn navigation={navigation} />
     </View>
   );
