@@ -20,6 +20,7 @@ const getImg = async () => {
     Asset.loadAsync([
       require("./assets/img/game_list_bg.png"),
       require("./assets/img/game_list_paper.jpg"),
+      require("./assets/img/game_desc_bg.png"),
     ])
   );
 };
