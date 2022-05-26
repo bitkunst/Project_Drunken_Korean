@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./src/screens/HomeScreen";
@@ -8,9 +8,21 @@ import GameScreen from "./src/screens/game/GameScreen";
 import GameDescScreen from "./src/screens/game/GameDescScreen";
 import { homeHeaderOptions, headerOptions } from "./src/public/styles";
 import * as SplashScreen from "expo-splash-screen";
+import { Asset, useAssets } from "expo-asset";
 import * as Font from "expo-font";
 
 const Stack = createNativeStackNavigator();
+let gameSrcBg;
+let gameBtnBg;
+
+const getImg = async () => {
+  await Promise.all(
+    Asset.loadAsync([
+      require("./assets/img/game_list_bg.png"),
+      require("./assets/img/game_list_paper.jpg"),
+    ])
+  );
+};
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -22,6 +34,7 @@ export default function App() {
           Deogon: require("./src/public/font/DeogonPrincess.otf"),
           Eulyoo: require("./src/public/font/Eulyoo1945-Regular.otf"),
         });
+        await getImg();
       } catch (e) {
         console.log(e);
       } finally {
@@ -49,7 +62,9 @@ export default function App() {
             />
             <Stack.Screen
               name="Game"
-              component={GameScreen}
+              children={({ navigation }) => (
+                <GameScreen navigation={navigation} />
+              )}
               options={{ ...headerOptions }}
             />
             <Stack.Screen
