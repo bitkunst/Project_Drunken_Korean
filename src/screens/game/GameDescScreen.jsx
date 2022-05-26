@@ -39,19 +39,12 @@ const GameDescScreen = ({ navigation, route }) => {
   const { content, rule, keyword } = route.params;
   return (
     <View>
-      <ImageBackground
-        source={gameDescBg}
-        style={{ width: "100%", height: "100%" }}
-      >
+      <ImageBackground source={gameDescBg} style={{ width, height }}>
         <View style={{ flexDirection: "row" }}>
           <Text
             style={{
               marginTop: height * 0.15,
               marginLeft: width * 0.1,
-              // paddingLeft:10,
-              // paddingRight:10,
-              // paddingTop:10,
-              // paddingBottom:10,
               textAlign: "center",
               borderColor: "black",
               borderWidth: 3,

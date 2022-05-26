@@ -1,15 +1,25 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, View, Button, Pressable, ImageBackground } from "react-native";
+import {
+  Text,
+  View,
+  Button,
+  Pressable,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
 import { styles } from "../public/styles";
+
+const { width, height } = Dimensions.get("screen");
+const mainBg = require("../../assets/img/bg1.jpeg");
 
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("../../assets/img/bg1.jpeg")}
+        source={mainBg}
         style={{
-          width: "100%",
-          height: "100%",
+          width,
+          height,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -20,8 +30,8 @@ const HomeScreen = ({ navigation }) => {
         <View
           style={{
             backgroundColor: "grey",
-            width: "100%",
-            height: "100%",
+            width,
+            height,
             position: "absolute",
             opacity: 0.5,
             zIndex: 2,

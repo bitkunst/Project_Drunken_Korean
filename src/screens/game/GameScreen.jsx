@@ -1,8 +1,9 @@
 import React from "react";
-import { ScrollView, ImageBackground, View } from "react-native";
+import { ScrollView, ImageBackground, View, Dimensions } from "react-native";
 import Game from "../../components/Game";
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+const { width, height } = Dimensions.get("screen");
 
 const gameSrcBg = require("../../../assets/img/game_list_bg.png");
 
@@ -34,16 +35,16 @@ const GameScreen = ({ navigation }) => {
         source={gameSrcBg}
         resizeMode="cover"
         style={{
-          width: "100%",
-          height: "100%",
+          width,
+          height,
         }}
       >
         <View
           style={{
             position: "absolute",
             backgroundColor: "#C48836",
-            height: "100%",
-            width: "100%",
+            width,
+            height,
             zIndex: 2,
             opacity: 0.25,
           }}
