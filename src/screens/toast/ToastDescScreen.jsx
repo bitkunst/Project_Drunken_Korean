@@ -16,7 +16,7 @@ const ToastDescScreen = ({ navigation }) => {
           name="home"
           size={35}
           color="black"
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.popToTop()}
         />
       ),
       headerLeft: () => (
