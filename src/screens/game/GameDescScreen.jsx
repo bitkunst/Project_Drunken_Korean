@@ -37,39 +37,81 @@ const GameDescScreen = ({ navigation, route }) => {
   }, [navigation]);
 
   const { content, rule, keyword } = route.params;
+  const temp = keyword.replace(/(\s*)/g, "");
+  const keyArr = temp.split("");
+
+  const setKeyword = () => {
+    return keyArr.map((v, k) => {
+      return (
+        <Text style={{ fontSize: 30, fontFamily: "Deogon" }} key={k}>
+          {v}
+        </Text>
+      );
+    });
+  };
+
   return (
     <View>
       <ImageBackground source={gameDescBg} style={{ width, height }}>
-        <View style={{ flexDirection: "row" }}>
-          <Text
-            style={{
-              marginTop: height * 0.15,
-              marginLeft: width * 0.1,
-              textAlign: "center",
-              borderColor: "black",
-              borderWidth: 3,
-              fontFamily: "Deogon",
-              fontSize: 30,
-              width: width * 0.12,
-            }}
+        <ScrollView>
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
-            {keyword}
-          </Text>
-          <Text
-            style={{
-              marginLeft: width * 0.2,
-              marginTop: height * 0.15,
-              fontSize: 30,
-              textAlign: "right",
-              width: width * 0.5,
-              fontFamily: "Deogon",
-            }}
-          >
-            {rule}
-          </Text>
-        </View>
-        <View>
-          <ScrollView>
+            <View
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                marginTop: height * 0.15,
+                marginLeft: width * 0.1,
+                borderColor: "black",
+                borderWidth: 3,
+                fontFamily: "Deogon",
+                width: width * 0.12,
+              }}
+            >
+              {setKeyword()}
+            </View>
+
+            <View
+              style={{
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "flex-end",
+                paddingTop: height * 0.15,
+                marginRight: width * 0.1,
+                width: width * 0.6,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 30,
+                  width: width * 0.5,
+                  fontFamily: "Deogon",
+                }}
+              >
+                인원수 : 인원수
+              </Text>
+              <Text
+                style={{
+                  fontSize: 26,
+                  width: width * 0.5,
+                  fontFamily: "Deogon",
+                }}
+              >
+                난이도 : ★★★★★
+              </Text>
+              <Text
+                style={{
+                  fontSize: 30,
+                  width: width * 0.5,
+                  fontFamily: "Deogon",
+                }}
+              >
+                유형 : 집갈거야
+              </Text>
+            </View>
+          </View>
+          <View>
             <Text
               style={{
                 fontFamily: "Deogon",
@@ -81,8 +123,8 @@ const GameDescScreen = ({ navigation, route }) => {
             >
               {content}
             </Text>
-          </ScrollView>
-        </View>
+          </View>
+        </ScrollView>
       </ImageBackground>
     </View>
   );
