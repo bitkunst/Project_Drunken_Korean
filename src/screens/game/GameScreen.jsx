@@ -1,8 +1,10 @@
 import React from "react";
-import { ScrollView, Text, Button } from "react-native";
+import { ScrollView, ImageBackground, View } from "react-native";
 import Game from "../../components/Game";
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+
+const gameSrcBg = require("../../../assets/img/game_list_bg.png");
 
 const GameScreen = ({ navigation }) => {
   React.useLayoutEffect(() => {
@@ -25,10 +27,37 @@ const GameScreen = ({ navigation }) => {
       ),
     });
   }, [navigation]);
+
   return (
-    <ScrollView>
-      <Game navigation={navigation} />
-    </ScrollView>
+    <View>
+      <ImageBackground
+        source={gameSrcBg}
+        resizeMode="cover"
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <View
+          style={{
+            position: "absolute",
+            backgroundColor: "#C48836",
+            height: "100%",
+            width: "100%",
+            zIndex: 2,
+            opacity: 0.25,
+          }}
+        />
+        <ScrollView
+          style={{
+            position: "relative",
+            zIndex: 3,
+          }}
+        >
+          <Game navigation={navigation} />
+        </ScrollView>
+      </ImageBackground>
+    </View>
   );
 };
 
