@@ -4,6 +4,7 @@ import { styles } from "../public/styles";
 const ToastBtn = ({ navigation }) => {
   return (
     <View
+      writing
       style={{
         flex: 1,
         flexDirection: "column",
@@ -11,12 +12,15 @@ const ToastBtn = ({ navigation }) => {
         alignItems: "center",
       }}
     >
-      <Pressable onPress={() => navigation.navigate("ToastDesc")}>
-        <Text style={styles.titleSt}>회식 자리</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.navigate("ToastDesc")}>
-        <Text style={styles.titleSt}>편한 자리</Text>
-      </Pressable>
+      <>
+        <Pressable onPress={() => navigation.navigate("ToastDesc")}>
+          <Text style={styles.titleSt}>회식 자리</Text>
+        </Pressable>
+
+        <Pressable onPress={() => navigation.navigate("ToastDesc")}>
+          <Text style={styles.titleSt}>편한 자리</Text>
+        </Pressable>
+      </>
     </View>
   );
 };
