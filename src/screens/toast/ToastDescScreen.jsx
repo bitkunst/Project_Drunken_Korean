@@ -6,8 +6,9 @@ import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
 const easyToast = data["Toast"]["easy"];
+const hardToast = data["Toast"]["hard"];
 
-const ToastDescScreen = ({ navigation }) => {
+const ToastDescScreen = ({ navigation, route }) => {
   const initialState = {
     keyword: "아래버튼",
     content: "눌러주세요",
@@ -36,23 +37,46 @@ const ToastDescScreen = ({ navigation }) => {
     });
   }, [navigation]);
 
-  const pickToast = () => {
-    const idx = Math.floor(Math.random() * easyToast.length);
+  const pickToast = (toastArr) => {
+    const idx = Math.floor(Math.random() * toastArr.length);
+
     const pickedOne = {
-      keyword: easyToast[idx].keyword,
-      content: easyToast[idx].content,
+      keyword: toastArr[idx].keyword,
+      content: toastArr[idx].content,
     };
     setRandom(pickedOne);
   };
 
+  const { isEasy } = route.params;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.contentSt}>{random.keyword}</Text>
-      <Text style={styles.contentSt}>{random.content}</Text>
-      <Pressable onPress={pickToast}>
-        <Text style={styles.titleSt}>랜덤</Text>
-      </Pressable>
-    </View>
+    <>
+      {isEasy ? (
+        <View style={styles.container}>
+          <Text style={styles.contentSt}>{random.keyword}</Text>
+          <Text style={styles.contentSt}>{random.content}</Text>
+          <Pressable
+            onPress={() => {
+              pickToast(easyToast);
+            }}
+          >
+            <Text style={styles.titleSt}>다음</Text>
+          </Pressable>
+        </View>
+      ) : (
+        <View style={styles.container}>
+          <Text style={styles.contentSt}>{random.keyword}</Text>
+          <Text style={styles.contentSt}>{random.content}</Text>
+          <Pressable
+            onPress={() => {
+              pickToast(hardToast);
+            }}
+          >
+            <Text style={styles.titleSt}>다음</Text>
+          </Pressable>
+        </View>
+      )}
+    </>
   );
 };
 

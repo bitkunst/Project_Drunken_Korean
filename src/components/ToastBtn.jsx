@@ -13,11 +13,22 @@ const ToastBtn = ({ navigation }) => {
       }}
     >
       <>
-        <Pressable onPress={() => navigation.navigate("ToastDesc")}>
+        <Pressable
+          onPress={() =>
+            navigation.navigate("ToastDesc", {
+              isEasy: false,
+            })
+          }
+        >
           <Text style={styles.titleSt}>회식 자리</Text>
         </Pressable>
-
-        <Pressable onPress={() => navigation.navigate("ToastDesc")}>
+        <Pressable
+          onPress={() =>
+            navigation.navigate("ToastDesc", {
+              isEasy: true,
+            })
+          }
+        >
           <Text style={styles.titleSt}>편한 자리</Text>
         </Pressable>
       </>
