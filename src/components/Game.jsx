@@ -12,6 +12,8 @@ const getItems = (navigation) => {
         onPress={() =>
           navigation.navigate("GameDesc", {
             content: v.content,
+            rule:v.rule,
+            keyword:v.keyword
           })
         }
       >
