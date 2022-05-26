@@ -1,8 +1,17 @@
-import { View, Pressable, Text } from "react-native";
+import {
+  View,
+  Pressable,
+  Text,
+  Dimensions,
+  ImageBackground,
+} from "react-native";
 import data from "../../data/data";
 import { styles } from "../public/styles";
 
 const gameArr = data["Game"];
+
+const { height } = Dimensions.get("screen");
+const gameBtnBg = require("../../assets/img/game_list_paper.jpg");
 
 const getItems = (navigation) => {
   return gameArr.map((v, k) => {
@@ -16,15 +25,34 @@ const getItems = (navigation) => {
             keyword:v.keyword
           })
         }
+        style={styles.gameBtn}
       >
-        <Text style={styles.gameBtn}>{v.keyword}</Text>
+        <ImageBackground
+          source={gameBtnBg}
+          resizeMode="cover"
+          imageStyle={{ borderRadius: 10 }}
+          //   style={{ width: "100%", height: "100%" }}
+        >
+          <Text style={styles.gameBtnText}>{v.keyword}</Text>
+        </ImageBackground>
       </Pressable>
     );
   });
 };
 
 const Game = ({ navigation }) => {
-  return <View>{getItems(navigation)}</View>;
+  return (
+    <View
+      style={{
+        marginTop: height * 0.15,
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {getItems(navigation)}
+    </View>
+  );
 };
 
 export default Game;

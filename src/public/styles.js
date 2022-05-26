@@ -20,13 +20,22 @@ export const styles = StyleSheet.create({
     fontSize: 30,
   },
   gameBtn: {
-    fontFamily: "Deogon",
+    zIndex: 100,
+    marginBottom: height * 0.02,
     borderStyle: "dashed",
-    borderWidth: 2,
-    borderRadius: 5,
-    // flex: 1,
-    height: 70,
-    fontSize: 50,
+    borderWidth: 3,
+    borderRadius: 10,
+    width: width * 0.85,
+  },
+  gameBtnText: {
+    fontFamily: "Deogon",
+    // height: 85,
+    // width: 500,
+    textAlign: "center",
+    lineHeight: 60,
+    fontSize: width * 0.1,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
   },
 });
 
