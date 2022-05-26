@@ -12,7 +12,7 @@ import { styles } from "../public/styles";
 
 const { width, height } = Dimensions.get("screen");
 const mainBg = require("../../assets/img/bg1.jpeg");
-
+const logo = require("../../assets/img/logo.png");
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
@@ -28,6 +28,11 @@ const HomeScreen = ({ navigation }) => {
           zIndex: 1,
         }}
       >
+        <Image
+          source={logo}
+          style={{ zIndex: 3, width: width * 0.7 }}
+          resizeMode="contain"
+        />
         <View
           style={{
             backgroundColor: "grey",
