@@ -21,6 +21,7 @@ const getImg = async () => {
       require("./assets/img/game_list_bg.png"),
       require("./assets/img/game_list_paper.jpg"),
       require("./assets/img/game_desc_bg.png"),
+      require("./assets/img/bg1.jpeg"),
     ])
   );
 };
@@ -31,15 +32,15 @@ export default function App() {
   useEffect(() => {
     const prepare = async () => {
       try {
+        await getImg();
         await Font.loadAsync({
           Deogon: require("./src/public/font/DeogonPrincess.otf"),
           Eulyoo: require("./src/public/font/Eulyoo1945-Regular.otf"),
         });
-        await getImg();
+
+        setAppIsReady(true);
       } catch (e) {
         console.log(e);
-      } finally {
-        setAppIsReady(true);
       }
     };
 

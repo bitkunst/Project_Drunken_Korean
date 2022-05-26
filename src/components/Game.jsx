@@ -21,8 +21,8 @@ const getItems = (navigation) => {
         onPress={() =>
           navigation.navigate("GameDesc", {
             content: v.content,
-            rule:v.rule,
-            keyword:v.keyword
+            rule: v.rule,
+            keyword: v.keyword,
           })
         }
         style={styles.gameBtn}
@@ -31,7 +31,6 @@ const getItems = (navigation) => {
           source={gameBtnBg}
           resizeMode="cover"
           imageStyle={{ borderRadius: 10 }}
-          //   style={{ width: "100%", height: "100%" }}
         >
           <Text style={styles.gameBtnText}>{v.keyword}</Text>
         </ImageBackground>
