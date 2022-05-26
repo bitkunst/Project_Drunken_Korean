@@ -6,6 +6,7 @@ import {
   Pressable,
   ImageBackground,
   Dimensions,
+  Image,
 } from "react-native";
 import { styles } from "../public/styles";
 
@@ -37,8 +38,6 @@ const HomeScreen = ({ navigation }) => {
             zIndex: 2,
           }}
         ></View>
-        <Text>술자리의 민족</Text>
-        <Text>-조선주막사-</Text>
         <Pressable
           onPress={() => navigation.navigate("Toast")}
           style={{ zIndex: 3 }}

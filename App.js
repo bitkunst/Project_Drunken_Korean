@@ -22,6 +22,7 @@ const getImg = async () => {
       require("./assets/img/game_list_paper.jpg"),
       require("./assets/img/game_desc_bg.png"),
       require("./assets/img/bg1.jpeg"),
+      require("./assets/img/moving.gif"),
     ])
   );
 };
