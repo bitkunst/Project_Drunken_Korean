@@ -26,6 +26,7 @@ const getImg = async () => {
       require("./assets/img/moving_char2.gif"),
       require("./assets/img/moving_char3.gif"),
       require("./assets/img/moving_char4.gif"),
+      require("./assets/img/game_desc_title.png"),
     ])
   );
 };

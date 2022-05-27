@@ -13,6 +13,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 const { width, height } = Dimensions.get("screen");
 const gameDescBg = require("../../../assets/img/game_desc_bg.png");
+const gameDescTitleBg = require("../../../assets/img/game_desc_title.png");
 
 const GameDescScreen = ({ navigation, route }) => {
   React.useLayoutEffect(() => {
@@ -43,7 +44,14 @@ const GameDescScreen = ({ navigation, route }) => {
   const setKeyword = () => {
     return keyArr.map((v, k) => {
       return (
-        <Text style={{ fontSize: 30, fontFamily: "Deogon" }} key={k}>
+        <Text
+          style={{
+            fontSize: 40,
+            fontFamily: "Deogon",
+            marginLeft: width * 0.027,
+          }}
+          key={k}
+        >
           {v}
         </Text>
       );
@@ -80,19 +88,32 @@ const GameDescScreen = ({ navigation, route }) => {
                   alignItems: "center",
                   marginTop: height * 0.15,
                   marginLeft: width * 0.1,
-                  borderColor: "black",
-                  borderWidth: 3,
+                  // borderColor: "black",
+                  // borderWidth: 3,
                   fontFamily: "Deogon",
                   width: width * 0.12,
                 }}
               >
-                {setKeyword()}
+                <ImageBackground
+                  source={gameDescTitleBg}
+                  style={{
+                    // marginTop: height * 0.15,
+                    // marginLeft: width * 0.1,
+                    paddingVertical: 40,
+                    paddingHorizontal: 15,
+                    boxSizing: "border-box",
+                    width: width * 0.2,
+                  }}
+                  resizeMode="stretch"
+                >
+                  {setKeyword()}
+                </ImageBackground>
               </View>
 
               <View
                 style={{
                   flexDirection: "column",
-                  justifyContent: "flex-start",
+                  justifyContent: "flex-end",
                   alignItems: "flex-end",
                   paddingTop: height * 0.15,
                   marginRight: width * 0.1,
