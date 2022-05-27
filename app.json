@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/img/moving_logo.gif",
+      "image": "./assets/img/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#e2cf9d"
     },

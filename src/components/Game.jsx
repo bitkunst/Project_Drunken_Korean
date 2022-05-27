@@ -48,6 +48,7 @@ const Game = ({ navigation }) => {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        marginBottom: height * 0.1,
       }}
     >
       {getItems(navigation)}
