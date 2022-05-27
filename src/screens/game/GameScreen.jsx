@@ -1,5 +1,11 @@
-import React from "react";
-import { ScrollView, ImageBackground, View, Dimensions } from "react-native";
+import React, { useEffect } from "react";
+import {
+  ScrollView,
+  ImageBackground,
+  View,
+  Dimensions,
+  Animated,
+} from "react-native";
 import Game from "../../components/Game";
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
@@ -29,6 +35,22 @@ const GameScreen = ({ navigation }) => {
     });
   }, [navigation]);
 
+  const state = {
+    animation: new Animated.Value(+height),
+  };
+
+  const animationStyles = {
+    transform: [{ translateY: state.animation }],
+  };
+
+  useEffect(() => {
+    Animated.timing(state.animation, {
+      toValue: 0,
+      duration: 1000,
+      useNativeDriver: true,
+    }).start();
+  }, []);
+
   return (
     <View>
       <ImageBackground
@@ -55,7 +77,9 @@ const GameScreen = ({ navigation }) => {
             zIndex: 3,
           }}
         >
-          <Game navigation={navigation} />
+          <Animated.View style={animationStyles}>
+            <Game navigation={navigation} />
+          </Animated.View>
         </ScrollView>
       </ImageBackground>
     </View>
