@@ -116,13 +116,13 @@ const GameDescScreen = ({ navigation, route }) => {
                   justifyContent: "flex-end",
                   alignItems: "flex-end",
                   paddingTop: height * 0.15,
-                  marginRight: width * 0.1,
+                  marginRight: width * 0.08,
                   width: width * 0.6,
                 }}
               >
                 <Text
                   style={{
-                    fontSize: 30,
+                    fontSize: width * 0.06,
                     width: width * 0.5,
                     fontFamily: "Deogon",
                   }}
@@ -131,16 +131,16 @@ const GameDescScreen = ({ navigation, route }) => {
                 </Text>
                 <Text
                   style={{
-                    fontSize: 26,
+                    fontSize: width * 0.08,
                     width: width * 0.5,
                     fontFamily: "Deogon",
                   }}
                 >
-                  난이도 : ★★★★★
+                  난이도 : ★★★
                 </Text>
                 <Text
                   style={{
-                    fontSize: 30,
+                    fontSize: width * 0.06,
                     width: width * 0.5,
                     fontFamily: "Deogon",
                   }}
@@ -157,6 +157,7 @@ const GameDescScreen = ({ navigation, route }) => {
                   marginTop: height * 0.1,
                   marginLeft: width * 0.1,
                   marginRight: width * 0.1,
+                  marginBottom: height * 0.1,
                 }}
               >
                 {content}

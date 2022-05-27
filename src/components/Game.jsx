@@ -11,7 +11,7 @@ import { styles } from "../public/styles";
 const gameArr = data["Game"];
 
 const { height } = Dimensions.get("screen");
-const gameBtnBg = require("../../assets/img/game_list_paper.jpg");
+const gameBtnBg = require("../../assets/img/game_list_btn.png");
 
 const getItems = (navigation) => {
   return gameArr.map((v, k) => {
@@ -29,8 +29,8 @@ const getItems = (navigation) => {
       >
         <ImageBackground
           source={gameBtnBg}
-          resizeMode="cover"
-          imageStyle={{ borderRadius: 10 }}
+          resizeMode="stretch"
+          imageStyle={{ height: height * 0.13 }}
         >
           <Text style={styles.gameBtnText}>{v.keyword}</Text>
         </ImageBackground>
@@ -44,6 +44,7 @@ const Game = ({ navigation }) => {
     <View
       style={{
         marginTop: height * 0.15,
+        marginBottom: height * 0.1,
         flex: 1,
         justifyContent: "center",
         alignItems: "center",

@@ -1,5 +1,18 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, Platform } from "react-native";
 const { height, width } = Dimensions.get("screen");
+let logoSize;
+let logoPosition;
+let btnLineHeight;
+
+if (Platform.OS === "android") {
+  logoSize = width * 0.7;
+  logoPosition = height * 0.05;
+  btnLineHeight = height * 0.09;
+} else if (Platform.OS === "ios") {
+  logoSize = width * 0.7;
+  logoPosition = height * 0.08;
+  btnLineHeight = height * 0.11;
+}
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,9 +24,14 @@ export const styles = StyleSheet.create({
   header: {
     flex: 1,
   },
+  mainLogoSt: {
+    zIndex: 3,
+    width: logoSize,
+    top: logoPosition,
+  },
   titleSt: {
     fontFamily: "Deogon",
-    fontSize: 100,
+    fontSize: width * 0.25,
   },
   contentSt: {
     fontFamily: "Eulyoo",
@@ -21,10 +39,10 @@ export const styles = StyleSheet.create({
   },
   gameBtn: {
     zIndex: 100,
-    marginBottom: height * 0.02,
-    borderStyle: "dashed",
-    borderWidth: 3,
-    borderRadius: 10,
+    marginBottom: height * 0.001,
+    // borderStyle: "dashed",
+    // borderWidth: 3,
+    // borderRadius: 10,
     width: width * 0.85,
   },
   gameBtnText: {
@@ -32,10 +50,11 @@ export const styles = StyleSheet.create({
     // height: 85,
     // width: 500,
     textAlign: "center",
-    lineHeight: 60,
+    lineHeight: btnLineHeight,
     fontSize: width * 0.1,
     paddingHorizontal: 10,
     paddingVertical: 10,
+    height: height * 0.13,
   },
 });
 

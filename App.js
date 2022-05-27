@@ -18,7 +18,7 @@ const getImg = async () => {
   await Promise.all(
     Asset.loadAsync([
       require("./assets/img/game_list_bg.png"),
-      require("./assets/img/game_list_paper.jpg"),
+      require("./assets/img/game_list_btn.png"),
       require("./assets/img/game_desc_bg.png"),
       require("./assets/img/bg1.jpeg"),
       require("./assets/img/moving_logo.gif"),
