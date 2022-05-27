@@ -36,11 +36,11 @@ const GameScreen = ({ navigation }) => {
   }, [navigation]);
 
   const state = {
-    animation: new Animated.Value(width),
+    animation: new Animated.Value(+height),
   };
 
   const animationStyles = {
-    transform: [{ translateX: state.animation }],
+    transform: [{ translateY: state.animation }],
   };
 
   useEffect(() => {
