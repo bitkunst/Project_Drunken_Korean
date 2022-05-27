@@ -28,6 +28,7 @@ const getImg = async () => {
       require("./assets/img/moving_char4.gif"),
       require("./assets/img/game_desc_title.png"),
       require("./assets/img/game_desc_bg.png"),
+      require("./assets/img/toast_desc_bg.png"),
       require("./assets/img/logo.png"),
       require("./assets/img/hwang.png"),
       require("./assets/img/kimgoo.png"),

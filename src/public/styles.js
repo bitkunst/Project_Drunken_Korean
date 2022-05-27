@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     fontSize: width * 0.25,
   },
   contentSt: {
-    fontFamily: "Eulyoo",
+    fontFamily: "Deogon",
     fontSize: 30,
   },
   gameBtn: {

@@ -77,12 +77,15 @@ const ToastDescScreen = ({ navigation, route }) => {
   return (
     <>
       {isEasy ? (
-        <View style={styles.container}>
+        <ImageBackground
+          source={require("../../../assets/img/toast_bg.jpeg")}
+          style={{ ...styles.container, width, height }}
+        >
           <ImageBackground
             source={toastBg}
             style={{
-              height: height * 0.7,
-              width: width,
+              height: height * 0.8,
+              width: width * 1,
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
@@ -103,16 +106,19 @@ const ToastDescScreen = ({ navigation, route }) => {
                 style={[
                   styles.contentSt,
                   {
-                    borderStyle: "dashed",
                     borderWidth: 1,
                     borderRadius: 10,
+                    backgroundColor: "#e2ce9dcc",
+                    shadowOpacity: 0.25,
+                    shadowRadius: 3.84,
                     paddingVertical: height * 0.01,
-                    width: width * 0.3,
+                    width: width * 0.4,
                     textAlign: "center",
+                    overflow: "hidden",
                   },
                 ]}
               >
-                다른거?
+                다른거 하실?
               </Text>
             </Pressable>
           </ImageBackground>
@@ -127,12 +133,31 @@ const ToastDescScreen = ({ navigation, route }) => {
             }}
             resizeMode="stretch"
           />
-          <View>
-            <Text style={{ ...styles.contentSt, fontSize: 15 }}>
+          <View
+            style={{
+              position: "absolute",
+              bottom: height * 0.07,
+              left: width * 0.1,
+              width: width * 0.4,
+              height: height * 0.12,
+              borderTopLeftRadius: "35",
+              borderBottomLeftRadius: "40",
+              borderBottomRightRadius: "5",
+              borderTopRightRadius: "40",
+              borderStyle: "solid",
+              borderWidth: 1,
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 10,
+              backgroundColor: "#e6e5e3cc",
+            }}
+          >
+            <Text style={{ ...styles.contentSt, fontSize: width * 0.06 }}>
               {srcRandom.cmmt}
             </Text>
           </View>
-        </View>
+        </ImageBackground>
       ) : (
         <View style={styles.container}>
           <Text style={styles.contentSt}>{random.keyword}</Text>
@@ -142,7 +167,7 @@ const ToastDescScreen = ({ navigation, route }) => {
               pickToast(hardToast);
             }}
           >
-            <Text style={styles.titleSt}>다른거?</Text>
+            <Text style={styles.titleSt}>다른거하실?</Text>
           </Pressable>
         </View>
       )}
