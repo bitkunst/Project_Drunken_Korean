@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import { useEffect } from "react";
 import {
   Text,
   View,
@@ -7,13 +8,17 @@ import {
   ImageBackground,
   Dimensions,
   Image,
+  Animated,
 } from "react-native";
 import { styles } from "../public/styles";
 
 const { width, height } = Dimensions.get("screen");
 const mainBg = require("../../assets/img/bg1.jpeg");
 const logo = require("../../assets/img/logo.png");
+
 const HomeScreen = ({ navigation }) => {
+  const state = { animation: new Animated.Value(0) };
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -30,8 +35,9 @@ const HomeScreen = ({ navigation }) => {
       >
         <Image
           source={logo}
-          style={{ zIndex: 3, width: width * 0.7 }}
+          style={{ zIndex: 3, width: width * 0.5, top: 0 }}
           resizeMode="contain"
+          position="absolute"
         />
         <View
           style={{

@@ -8,13 +8,11 @@ import GameScreen from "./src/screens/game/GameScreen";
 import GameDescScreen from "./src/screens/game/GameDescScreen";
 import { homeHeaderOptions, headerOptions } from "./src/public/styles";
 import * as SplashScreen from "expo-splash-screen";
-import { Asset, useAssets } from "expo-asset";
+import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import Loading from "./src/components/Loading";
 
 const Stack = createNativeStackNavigator();
-let gameSrcBg;
-let gameBtnBg;
 
 const getImg = async () => {
   await Promise.all(
