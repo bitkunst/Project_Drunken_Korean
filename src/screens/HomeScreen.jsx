@@ -9,7 +9,9 @@ import {
   Dimensions,
   Image,
   Animated,
+  Easing,
 } from "react-native";
+// import { Easing } from "react-native-web";
 import { styles } from "../public/styles";
 
 const { width, height } = Dimensions.get("screen");
@@ -17,7 +19,37 @@ const mainBg = require("../../assets/img/bg1.jpeg");
 const logo = require("../../assets/img/logo.png");
 
 const HomeScreen = ({ navigation }) => {
-  const state = { animation: new Animated.Value(0) };
+  const state = { verticalVal: new Animated.Value(0) };
+
+  const animationStyles = {
+    transform: [{ translateY: state.verticalVal }],
+  };
+
+  useEffect(() => {
+    Animated.timing(state.verticalVal, {
+      toValue: 20,
+      duration: 500,
+      useNativeDriver: false,
+      easing: Easing.inOut(Easing.quad),
+    }).start();
+    state.verticalVal.addListener(({ value }) => {
+      if (value === 20) {
+        Animated.timing(state.verticalVal, {
+          toValue: 0,
+          duration: 500,
+          useNativeDriver: false,
+          easing: Easing.inOut(Easing.quad),
+        }).start();
+      } else if (value === 0) {
+        Animated.timing(state.verticalVal, {
+          toValue: 20,
+          duration: 500,
+          useNativeDriver: false,
+          easing: Easing.inOut(Easing.quad),
+        }).start();
+      }
+    });
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -35,7 +67,7 @@ const HomeScreen = ({ navigation }) => {
       >
         <Image
           source={logo}
-          style={{ zIndex: 3, width: width * 0.5, top: 0 }}
+          style={styles.mainLogoSt}
           resizeMode="contain"
           position="absolute"
         />
@@ -49,18 +81,24 @@ const HomeScreen = ({ navigation }) => {
             zIndex: 2,
           }}
         ></View>
+
         <Pressable
           onPress={() => navigation.navigate("Toast")}
-          style={{ zIndex: 3 }}
+          style={{ zIndex: 3, marginVertical: 30 }}
         >
-          <Text style={styles.titleSt}>건배사</Text>
+          <Animated.View style={animationStyles}>
+            <Text style={styles.titleSt}>건배사</Text>
+          </Animated.View>
         </Pressable>
         <Pressable
           onPress={() => navigation.navigate("Game")}
           style={{ zIndex: 3 }}
         >
-          <Text style={styles.titleSt}>술게임</Text>
+          <Animated.View style={animationStyles}>
+            <Text style={styles.titleSt}>술게임</Text>
+          </Animated.View>
         </Pressable>
+
         <StatusBar style="auto" />
       </ImageBackground>
     </View>
