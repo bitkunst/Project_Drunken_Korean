@@ -28,11 +28,14 @@ const getImg = async () => {
       require("./assets/img/moving_char4.gif"),
       require("./assets/img/game_desc_title.png"),
       require("./assets/img/game_desc_bg.png"),
+      require("./assets/img/toast_desc_bg.png"),
       require("./assets/img/logo.png"),
       require("./assets/img/hwang.png"),
       require("./assets/img/kimgoo.png"),
       require("./assets/img/sejong.png"),
       require("./assets/img/sinsa.png"),
+      require("./assets/img/easy_list.jpeg"),
+      require("./assets/img/hard_list.jpeg"),
     ])
   );
 };
