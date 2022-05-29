@@ -14,7 +14,8 @@ import { styles } from "../../public/styles";
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
-const toastBg = require("../../../assets/img/toast_desc_bg.png");
+const toastBg = require("../../../assets/img/toast_bg.jpeg");
+const toastDescBg = require("../../../assets/img/toast_desc_bg.png");
 const sejong = require("../../../assets/img/sejong.png");
 
 const easyToast = data["Toast"]["easy"];
@@ -77,20 +78,17 @@ const ToastDescScreen = ({ navigation, route }) => {
   return (
     <>
       {isEasy ? (
-        <View style={styles.container}>
+        <ImageBackground
+          source={toastBg}
+          style={{ ...styles.container, width, height }}
+        >
           <ImageBackground
-            source={toastBg}
-            style={{
-              height: height * 0.7,
-              width: width,
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            source={toastDescBg}
+            style={styles.toastDescBg}
             resizeMode="stretch"
           >
-            <Text style={[styles.titleSt]}>{random.keyword}</Text>
-            <Text style={[styles.contentSt]}>{random.content}</Text>
+            <Text style={styles.toastDescTxt}>{random.keyword}</Text>
+            <Text style={styles.toastDescCont}>{random.content}</Text>
             <Pressable
               onPress={() => {
                 pickToast(easyToast, randomSrc);
@@ -99,52 +97,50 @@ const ToastDescScreen = ({ navigation, route }) => {
                 paddingVertical: height * 0.05,
               }}
             >
-              <Text
-                style={[
-                  styles.contentSt,
-                  {
-                    borderStyle: "dashed",
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    paddingVertical: height * 0.01,
-                    width: width * 0.3,
-                    textAlign: "center",
-                  },
-                ]}
-              >
-                다른거?
-              </Text>
+              <Text style={styles.toastNextBtn}>다른거 하쉴?</Text>
             </Pressable>
           </ImageBackground>
           <Image
             source={srcRandom.pic}
-            style={{
-              width: width * 0.6,
-              height: height * 0.3,
-              position: "absolute",
-              bottom: 0,
-              right: 0,
-            }}
+            style={styles.srcRandomPic}
             resizeMode="stretch"
           />
-          <View>
-            <Text style={{ ...styles.contentSt, fontSize: 15 }}>
-              {srcRandom.cmmt}
-            </Text>
+          <View style={styles.srcRandomCmmtWrap}>
+            <Text style={styles.srcRandomCmmt}>{srcRandom.cmmt}</Text>
           </View>
-        </View>
+        </ImageBackground>
       ) : (
-        <View style={styles.container}>
-          <Text style={styles.contentSt}>{random.keyword}</Text>
-          <Text style={styles.contentSt}>{random.content}</Text>
-          <Pressable
-            onPress={() => {
-              pickToast(hardToast);
-            }}
+        <ImageBackground
+          source={toastBg}
+          style={{ ...styles.container, width, height }}
+        >
+          <ImageBackground
+            source={toastDescBg}
+            style={styles.toastDescBg}
+            resizeMode="stretch"
           >
-            <Text style={styles.titleSt}>다른거?</Text>
-          </Pressable>
-        </View>
+            <Text style={styles.toastDescTxt}>{random.keyword}</Text>
+            <Text style={styles.toastDescCont}>{random.content}</Text>
+            <Pressable
+              onPress={() => {
+                pickToast(hardToast, randomSrc);
+              }}
+              style={{
+                paddingVertical: height * 0.05,
+              }}
+            >
+              <Text style={styles.toastNextBtn}>다른거 하쉴?</Text>
+            </Pressable>
+          </ImageBackground>
+          <Image
+            source={srcRandom.pic}
+            style={styles.srcRandomPic}
+            resizeMode="stretch"
+          />
+          <View style={styles.srcRandomCmmtWrap}>
+            <Text style={styles.srcRandomCmmt}>{srcRandom.cmmt}</Text>
+          </View>
+        </ImageBackground>
       )}
     </>
   );
