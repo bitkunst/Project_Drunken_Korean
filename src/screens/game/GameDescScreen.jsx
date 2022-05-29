@@ -58,6 +58,24 @@ const GameDescScreen = ({ navigation, route }) => {
     });
   };
 
+  const setContent = () => {
+    return content.map((v,k)=>{
+      return (
+        <Text key={k} style={{
+          fontFamily: "Deogon",
+          fontSize: 30,
+          textAlign:"left",
+          marginTop: height * 0.1,
+          marginLeft: width * 0.1,
+          marginRight: width * 0.1,
+          marginBottom: height * 0.1,
+        }}>
+          {v}
+        </Text>
+      )
+    })
+  }
+
   const state = {
     animation: new Animated.Value(0),
   };
@@ -127,7 +145,7 @@ const GameDescScreen = ({ navigation, route }) => {
                     fontFamily: "Deogon",
                   }}
                 >
-                  인원수 : 인원수
+                  {rule.howMany}
                 </Text>
                 <Text
                   style={{
@@ -136,7 +154,7 @@ const GameDescScreen = ({ navigation, route }) => {
                     fontFamily: "Deogon",
                   }}
                 >
-                  난이도 : ★★★
+                  {rule.level}
                 </Text>
                 <Text
                   style={{
@@ -145,23 +163,12 @@ const GameDescScreen = ({ navigation, route }) => {
                     fontFamily: "Deogon",
                   }}
                 >
-                  유형 : 집갈거야
+                  {rule.class}
                 </Text>
               </View>
             </View>
             <View>
-              <Text
-                style={{
-                  fontFamily: "Deogon",
-                  fontSize: 25,
-                  marginTop: height * 0.1,
-                  marginLeft: width * 0.1,
-                  marginRight: width * 0.1,
-                  marginBottom: height * 0.1,
-                }}
-              >
-                {content}
-              </Text>
+              {setContent()}
             </View>
           </ScrollView>
         </Animated.View>
