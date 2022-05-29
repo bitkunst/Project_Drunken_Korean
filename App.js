@@ -39,6 +39,9 @@ const getImg = async () => {
       require("./assets/img/ee.png"),
       require("./assets/app_icon.png"),
       require("./assets/app_icon_nobg.png"),
+      require("./assets/img/easy_list.jpeg"),
+      require("./assets/img/hard_list.jpeg"),
+      require("./assets/img/loading_bg.jpeg"),
     ])
   );
 };

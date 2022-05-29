@@ -14,15 +14,7 @@ const easyListBg = require("../../assets/img/easy_list.jpeg");
 
 const ToastBtn = ({ navigation }) => {
   return (
-    <View
-      writing
-      style={{
-        flex: 1,
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <View writing style={styles.toastListWrap}>
       <>
         <TouchableHighlight
           onPress={() =>
@@ -36,12 +28,7 @@ const ToastBtn = ({ navigation }) => {
           <ImageBackground
             source={hardListBg}
             resizeMode="stretch"
-            style={{
-              height: height * 0.5,
-              width,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            style={styles.toastList}
             imageStyle={{
               opacity: 0.7,
             }}
@@ -53,7 +40,7 @@ const ToastBtn = ({ navigation }) => {
         <TouchableHighlight
           onPress={() =>
             navigation.navigate("ToastDesc", {
-              isEasy: false,
+              isEasy: true,
             })
           }
           underlayColor="#B1934B"
@@ -62,12 +49,7 @@ const ToastBtn = ({ navigation }) => {
           <ImageBackground
             source={easyListBg}
             resizeMode="stretch"
-            style={{
-              height: height * 0.5,
-              width,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            style={styles.toastList}
             imageStyle={{
               opacity: 0.7,
             }}
