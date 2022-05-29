@@ -39,6 +39,9 @@ const getImg = async () => {
       require("./assets/img/ee.png"),
       require("./assets/app_icon.png"),
       require("./assets/app_icon_nobg.png"),
+      require("./assets/img/easy_list.jpeg"),
+      require("./assets/img/hard_list.jpeg"),
+      require("./assets/img/loading_bg.jpeg"),
     ])
   );
 };
@@ -56,9 +59,9 @@ export default function App() {
           Eulyoo: require("./src/public/font/Eulyoo1945-Regular.otf"),
           Kyobo: require("./src/public/font/KyoboHandwriting2020pdy.otf"),
         });
-        // setTimeout(() => {
-        //   setIsLoading(false);
-        // }, 3500);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 3500);
         setAppIsReady(true);
       } catch (e) {
         console.log(e);

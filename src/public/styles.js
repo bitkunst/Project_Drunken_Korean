@@ -122,6 +122,18 @@ export const styles = StyleSheet.create({
     fontSize: width * 0.05,
     alignSelf: "center",
   },
+  toastListWrap: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  toastList: {
+    height: height * 0.5,
+    width,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 
 export const homeHeaderOptions = {

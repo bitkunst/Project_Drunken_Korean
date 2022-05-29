@@ -7,6 +7,7 @@ import {
   ImageBackground,
   Dimensions,
   Image,
+  TouchableHighlight,
 } from "react-native";
 import data from "../../../data/data";
 import { randomSrc } from "../../../data/randomSrc";
@@ -94,7 +95,8 @@ const ToastDescScreen = ({ navigation, route }) => {
                 pickToast(easyToast, randomSrc);
               }}
               style={{
-                paddingVertical: height * 0.05,
+                paddingTop: height * 0.05,
+                paddingBottom: height * 0.08,
               }}
             >
               <Text style={styles.toastNextBtn}>다른거 하쉴?</Text>
@@ -126,7 +128,8 @@ const ToastDescScreen = ({ navigation, route }) => {
                 pickToast(hardToast, randomSrc);
               }}
               style={{
-                paddingVertical: height * 0.05,
+                paddingTop: height * 0.05,
+                paddingBottom: height * 0.08,
               }}
             >
               <Text style={styles.toastNextBtn}>다른거 하쉴?</Text>

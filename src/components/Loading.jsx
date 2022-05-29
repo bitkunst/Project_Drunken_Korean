@@ -9,16 +9,18 @@ const movingChar1 = require("../../assets/img/moving_char1.gif");
 const movingChar2 = require("../../assets/img/moving_char2.gif");
 const movingChar3 = require("../../assets/img/moving_char3.gif");
 const movingChar4 = require("../../assets/img/moving_char4.gif");
+const loadingBg = require("../../assets/img/loading_bg.jpeg");
 
 const Loading = () => {
   return (
-    <View
+    <ImageBackground
+      source={loadingBg}
       style={{
         width,
         height,
         alignItems: "center",
-        backgroundColor: "#e2cf9d",
       }}
+      imageStyle={{ opacity: 0.6 }}
     >
       <Image
         source={movingLogo}
@@ -54,7 +56,7 @@ const Loading = () => {
           style={{ width: width * 0.26, height: height * 0.35 }}
         />
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
