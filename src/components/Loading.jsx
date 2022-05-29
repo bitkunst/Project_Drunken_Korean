@@ -22,7 +22,7 @@ const Loading = () => {
     >
       <Image
         source={movingLogo}
-        style={{ flex: 1, width: "95%" }}
+        style={{ flex: 1, width: "80%" }}
         resizeMode="contain"
       />
       <View

@@ -56,9 +56,9 @@ export default function App() {
           Eulyoo: require("./src/public/font/Eulyoo1945-Regular.otf"),
           Kyobo: require("./src/public/font/KyoboHandwriting2020pdy.otf"),
         });
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 3500);
+        // setTimeout(() => {
+        //   setIsLoading(false);
+        // }, 3500);
         setAppIsReady(true);
       } catch (e) {
         console.log(e);
