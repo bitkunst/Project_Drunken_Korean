@@ -28,12 +28,17 @@ const getImg = async () => {
       require("./assets/img/moving_char4.gif"),
       require("./assets/img/game_desc_title.png"),
       require("./assets/img/game_desc_bg.png"),
+      require("./assets/img/toast_bg.jpeg"),
       require("./assets/img/toast_desc_bg.png"),
       require("./assets/img/logo.png"),
       require("./assets/img/hwang.png"),
       require("./assets/img/kimgoo.png"),
       require("./assets/img/sejong.png"),
       require("./assets/img/sinsa.png"),
+      require("./assets/img/sunsin.png"),
+      require("./assets/img/ee.png"),
+      require("./assets/app_icon.png"),
+      require("./assets/app_icon_nobg.png"),
     ])
   );
 };
@@ -49,6 +54,7 @@ export default function App() {
         await Font.loadAsync({
           Deogon: require("./src/public/font/DeogonPrincess.otf"),
           Eulyoo: require("./src/public/font/Eulyoo1945-Regular.otf"),
+          Kyobo: require("./src/public/font/KyoboHandwriting2020pdy.otf"),
         });
         setTimeout(() => {
           setIsLoading(false);

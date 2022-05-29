@@ -4,10 +4,10 @@
     "slug": "drunken_korean",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/app_icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/img/icon.png",
+      "image": "./assets/app_icon_nobg.png",
       "resizeMode": "contain",
       "backgroundColor": "#e2cf9d"
     },
