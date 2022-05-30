@@ -1,19 +1,5 @@
 import { StyleSheet, Dimensions, Platform } from "react-native";
 const { height, width } = Dimensions.get("screen");
-let logoSize;
-let logoPosition;
-let btnLineHeight;
-let cmmtRadius;
-
-if (Platform.OS === "android") {
-  logoSize = width * 0.7;
-  logoPosition = height * 0.05;
-  btnLineHeight = height * 0.09;
-} else if (Platform.OS === "ios") {
-  logoSize = width * 0.7;
-  logoPosition = height * 0.08;
-  btnLineHeight = height * 0.11;
-}
 
 export const styles = StyleSheet.create({
   container: {
@@ -27,8 +13,16 @@ export const styles = StyleSheet.create({
   },
   mainLogoSt: {
     zIndex: 3,
-    width: logoSize,
-    top: logoPosition,
+    ...Platform.select({
+      ios: {
+        width: width * 0.7,
+        top: height * 0.08,
+      },
+      android: {
+        width: width * 0.7,
+        top: height * 0.05,
+      },
+    }),
   },
   titleSt: {
     fontFamily: "Deogon",
@@ -41,17 +35,19 @@ export const styles = StyleSheet.create({
   gameBtn: {
     zIndex: 100,
     marginBottom: height * 0.001,
-    // borderStyle: "dashed",
-    // borderWidth: 3,
-    // borderRadius: 10,
     width: width * 0.85,
   },
   gameBtnText: {
     fontFamily: "Deogon",
-    // height: 85,
-    // width: 500,
     textAlign: "center",
-    lineHeight: btnLineHeight,
+    ...Platform.select({
+      ios: {
+        lineHeight: height * 0.11,
+      },
+      android: {
+        lineHeight: height * 0.09,
+      },
+    }),
     fontSize: width * 0.1,
     paddingHorizontal: 10,
     paddingVertical: 10,
@@ -72,7 +68,7 @@ export const styles = StyleSheet.create({
   },
   toastDescCont: {
     fontFamily: "Deogon",
-    fontSize: width * 0.08,
+    fontSize: 27,
     width: width * 0.6,
     textAlign: "center",
   },
@@ -94,10 +90,10 @@ export const styles = StyleSheet.create({
     },
   },
   srcRandomPic: {
-    width: width * 0.55,
-    height: height * 0.35,
+    width: width * 0.45,
+    height: height * 0.25,
     position: "absolute",
-    bottom: height * -0.05,
+    bottom: height < 732 ? height * 0.05 : 0,
     right: 0,
   },
   srcRandomCmmtWrap: {
@@ -105,10 +101,17 @@ export const styles = StyleSheet.create({
     bottom: height * 0.12,
     left: width * 0.08,
     width: width * 0.45,
-    borderTopLeftRadius: "30",
-    borderTopRightRadius: "40",
-    borderBottomLeftRadius: "40",
-    borderBottomRightRadius: "1",
+    ...Platform.select({
+      ios: {
+        borderTopLeftRadius: "30",
+        borderTopRightRadius: "40",
+        borderBottomLeftRadius: "40",
+        borderBottomRightRadius: "1",
+      },
+      android: {
+        borderRadius: 10,
+      },
+    }),
     padding: 15,
     backgroundColor: "#F9F3E7cc",
     shadowColor: "rgb(50, 50, 50)",
@@ -120,7 +123,14 @@ export const styles = StyleSheet.create({
     },
   },
   srcRandomCmmt: {
-    fontSize: width * 0.05,
+    ...Platform.select({
+      ios: {
+        fontSize: 20,
+      },
+      android: {
+        fontSize: 17,
+      },
+    }),
     alignSelf: "center",
   },
   toastListWrap: {
@@ -142,7 +152,6 @@ export const homeHeaderOptions = {
 };
 
 export const headerOptions = {
-  //   headerTransparent: true,
   headerStyle: {
     elevation: 0,
     shadowOpacity: 0,
