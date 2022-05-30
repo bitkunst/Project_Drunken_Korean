@@ -93,7 +93,14 @@ export const styles = StyleSheet.create({
     width: width * 0.45,
     height: height * 0.25,
     position: "absolute",
-    bottom: height < 732 ? height * 0.05 : 0,
+    ...Platform.select({
+      ios: {
+        bottom: 0,
+      },
+      android: {
+        bottom: height < 732 ? height * 0.05 : 0,
+      },
+    }),
     right: 0,
   },
   srcRandomCmmtWrap: {
