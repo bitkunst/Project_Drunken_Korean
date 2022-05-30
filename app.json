@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "drunken_korean",
-    "slug": "drunken_korean",
+    "name": "술자리의 민족 -조선주막사-",
+    "slug": "drunkenkr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/app_icon.png",
@@ -14,7 +14,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -26,6 +28,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "건배사 & 술게임 모음집",
+    "githubUrl": "https://github.com/bitkunst/Project_Drunken_Korean.git"
   }
 }
