@@ -78,18 +78,23 @@ const ToastDescScreen = ({ navigation, route }) => {
 
   return (
     <>
-      {isEasy ? (
+      <ImageBackground
+        source={toastBg}
+        style={{
+          alignItems: "center",
+          paddingTop: height * 0.08,
+          width,
+          height,
+        }}
+      >
         <ImageBackground
-          source={toastBg}
-          style={{ ...styles.container, width, height }}
+          source={toastDescBg}
+          style={styles.toastDescBg}
+          resizeMode="stretch"
         >
-          <ImageBackground
-            source={toastDescBg}
-            style={styles.toastDescBg}
-            resizeMode="stretch"
-          >
-            <Text style={styles.toastDescTxt}>{random.keyword}</Text>
-            <Text style={styles.toastDescCont}>{random.content}</Text>
+          <Text style={styles.toastDescTxt}>{random.keyword}</Text>
+          <Text style={styles.toastDescCont}>{random.content}</Text>
+          {isEasy ? (
             <Pressable
               onPress={() => {
                 pickToast(easyToast, randomSrc);
@@ -101,28 +106,7 @@ const ToastDescScreen = ({ navigation, route }) => {
             >
               <Text style={styles.toastNextBtn}>다른거 하쉴?</Text>
             </Pressable>
-          </ImageBackground>
-          <Image
-            source={srcRandom.pic}
-            style={styles.srcRandomPic}
-            resizeMode="cover"
-          />
-          <View style={styles.srcRandomCmmtWrap}>
-            <Text style={styles.srcRandomCmmt}>{srcRandom.cmmt}</Text>
-          </View>
-        </ImageBackground>
-      ) : (
-        <ImageBackground
-          source={toastBg}
-          style={{ ...styles.container, width, height }}
-        >
-          <ImageBackground
-            source={toastDescBg}
-            style={styles.toastDescBg}
-            resizeMode="stretch"
-          >
-            <Text style={styles.toastDescTxt}>{random.keyword}</Text>
-            <Text style={styles.toastDescCont}>{random.content}</Text>
+          ) : (
             <Pressable
               onPress={() => {
                 pickToast(hardToast, randomSrc);
@@ -134,17 +118,17 @@ const ToastDescScreen = ({ navigation, route }) => {
             >
               <Text style={styles.toastNextBtn}>다른거 하쉴?</Text>
             </Pressable>
-          </ImageBackground>
-          <Image
-            source={srcRandom.pic}
-            style={styles.srcRandomPic}
-            resizeMode="cover"
-          />
-          <View style={styles.srcRandomCmmtWrap}>
-            <Text style={styles.srcRandomCmmt}>{srcRandom.cmmt}</Text>
-          </View>
+          )}
         </ImageBackground>
-      )}
+        <Image
+          source={srcRandom.pic}
+          style={styles.srcRandomPic}
+          resizeMode="cover"
+        />
+        <View style={styles.srcRandomCmmtWrap}>
+          <Text style={styles.srcRandomCmmt}>{srcRandom.cmmt}</Text>
+        </View>
+      </ImageBackground>
     </>
   );
 };
