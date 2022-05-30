@@ -15,7 +15,7 @@ import Loading from "./src/components/Loading";
 const Stack = createNativeStackNavigator();
 
 const getImg = async () => {
-  await Promise.all(
+  await Promise.all([
     Asset.loadAsync([
       require("./assets/img/game_list_bg.png"),
       require("./assets/img/game_list_btn.png"),
@@ -42,8 +42,8 @@ const getImg = async () => {
       require("./assets/img/hard_list.jpeg"),
       require("./assets/img/loading_bg.jpeg"),
       require("./assets/app_icon_loading.png"),
-    ])
-  );
+    ]),
+  ]);
 };
 
 export default function App() {
