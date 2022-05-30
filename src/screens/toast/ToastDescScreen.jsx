@@ -105,7 +105,7 @@ const ToastDescScreen = ({ navigation, route }) => {
           <Image
             source={srcRandom.pic}
             style={styles.srcRandomPic}
-            resizeMode="stretch"
+            resizeMode="cover"
           />
           <View style={styles.srcRandomCmmtWrap}>
             <Text style={styles.srcRandomCmmt}>{srcRandom.cmmt}</Text>
@@ -138,7 +138,7 @@ const ToastDescScreen = ({ navigation, route }) => {
           <Image
             source={srcRandom.pic}
             style={styles.srcRandomPic}
-            resizeMode="stretch"
+            resizeMode="cover"
           />
           <View style={styles.srcRandomCmmtWrap}>
             <Text style={styles.srcRandomCmmt}>{srcRandom.cmmt}</Text>
