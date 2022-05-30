@@ -80,7 +80,12 @@ const ToastDescScreen = ({ navigation, route }) => {
     <>
       <ImageBackground
         source={toastBg}
-        style={{ ...styles.container, width, height }}
+        style={{
+          alignItems: "center",
+          paddingTop: height * 0.08,
+          width,
+          height,
+        }}
       >
         <ImageBackground
           source={toastDescBg}
@@ -118,7 +123,7 @@ const ToastDescScreen = ({ navigation, route }) => {
         <Image
           source={srcRandom.pic}
           style={styles.srcRandomPic}
-          resizeMode="stretch"
+          resizeMode="contain"
         />
         <View style={styles.srcRandomCmmtWrap}>
           <Text style={styles.srcRandomCmmt}>{srcRandom.cmmt}</Text>

@@ -3,6 +3,7 @@ const { height, width } = Dimensions.get("screen");
 let logoSize;
 let logoPosition;
 let btnLineHeight;
+let cmmtRadius;
 
 if (Platform.OS === "android") {
   logoSize = width * 0.7;
@@ -93,10 +94,10 @@ export const styles = StyleSheet.create({
     },
   },
   srcRandomPic: {
-    width: width * 0.6,
-    height: height * 0.3,
+    width: width * 0.55,
+    height: height * 0.35,
     position: "absolute",
-    bottom: -5,
+    bottom: height * -0.05,
     right: 0,
   },
   srcRandomCmmtWrap: {
