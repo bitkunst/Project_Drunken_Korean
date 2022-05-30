@@ -7,8 +7,11 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "deploy": "gh-pages -d web-build",
+    "predeploy": "expo build:web"
   },
+  "homepage": "http://bitkunst.github.io/Project_Drunken_Korean",
   "dependencies": {
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
