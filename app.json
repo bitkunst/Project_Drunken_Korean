@@ -22,10 +22,10 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/app_icon.png",
-        "backgroundColor": "#D8BD91",
-        "permissions": []
+        "backgroundColor": "#D8BD91"
       },
-      "package": "com.jjlee.drunkenKorean"
+      "package": "com.jjlee.drunkenKorean",
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/favicon.png"
