@@ -15,17 +15,17 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/app_icon.png",
-        "backgroundColor": "#D8BD91"
-      }
+        "backgroundColor": "#D8BD91",
+        "permissions": []
+      },
+      "package": "com.jjlee.drunkenKorean"
     },
     "web": {
       "favicon": "./assets/favicon.png"
