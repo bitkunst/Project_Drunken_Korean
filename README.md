@@ -15,7 +15,7 @@ React Native와 Expo를 활용하여 제작한 mobile application 입니다. <br
 
 <br/>
 
-저희 Application이 서비스하는 주요 컨텐츠는 회식 자리나 친구들과의 술자리에서 사용할 수 있는 **_건배사추천_** 과 **_술게임설명서_** 입니다. 또한, 사용자 친화적인 UI 를 구성하기 위해 디자인적인 요소에 힘을 실어 작업하였습니다. 재밌게 즐겨주세요 :-)
+저희 Application이 서비스하는 주요 컨텐츠는 회식 자리나 친구들과의 술자리에서 사용할 수 있는 **_건배사추천🍻_** 과 **_술게임설명서📙_** 입니다. 또한, 사용자 친화적인 UI 를 구성하기 위해 디자인적인 요소에 힘을 실어 작업하였습니다. 재밌게 즐겨주세요 :-)
 
 <br/>
 
@@ -57,17 +57,17 @@ React Native와 Expo를 활용하여 제작한 mobile application 입니다. <br
 <table>
     <tr>
         <td align="center" width="120px" height="80px">
-            <a href="https://github.com/JJChan96"><img height="150px" width="100px" src="https://user-images.githubusercontent.com/69417234/171446962-06b6751a-6eca-4267-8352-e6f4294eced2.gif" /></a>
+            <a href="https://github.com/JJChan96"><img height="150px" width="150px" src="https://user-images.githubusercontent.com/69417234/171446962-06b6751a-6eca-4267-8352-e6f4294eced2.gif" /></a>
             <br />
             장주찬 <br/>
         </td>
        <td align="center" width="120px" height="80px">
-            <a href="https://github.com/bitkunst"><img height="150px" width="100px" src="https://user-images.githubusercontent.com/69417234/171447135-a65ba6ea-2069-42b5-9272-95d635267fde.gif" /></a>
+            <a href="https://github.com/bitkunst"><img height="150px" width="150px" src="https://user-images.githubusercontent.com/69417234/171447135-a65ba6ea-2069-42b5-9272-95d635267fde.gif" /></a>
             <br />
             장재원 <br/>
         </td>
         <td align="center" width="120px" height="80px">
-            <a href="https://github.com/yjleeinkr"><img height="150px" width="100px" src="https://user-images.githubusercontent.com/69417234/171447140-c214cf08-8505-493d-a2e7-c32456eeea7a.gif" /></a>
+            <a href="https://github.com/yjleeinkr"><img height="150px" width="150px" src="https://user-images.githubusercontent.com/69417234/171447140-c214cf08-8505-493d-a2e7-c32456eeea7a.gif" /></a>
             <br />
             이연정
         </td>
