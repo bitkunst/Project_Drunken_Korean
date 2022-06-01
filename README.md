@@ -57,17 +57,17 @@ React Native와 Expo를 활용하여 제작한 mobile application 입니다. <br
 <table>
     <tr>
         <td align="center" width="120px" height="80px">
-            <a href="https://github.com/JJChan96"><img height="150px" width="150px" src="https://user-images.githubusercontent.com/69417234/171446962-06b6751a-6eca-4267-8352-e6f4294eced2.gif" /></a>
+            <a href="https://github.com/JJChan96"><img height="150px" width="200px" src="https://user-images.githubusercontent.com/69417234/171446962-06b6751a-6eca-4267-8352-e6f4294eced2.gif" /></a>
             <br />
             장주찬 <br/>
         </td>
        <td align="center" width="120px" height="80px">
-            <a href="https://github.com/bitkunst"><img height="150px" width="150px" src="https://user-images.githubusercontent.com/69417234/171447135-a65ba6ea-2069-42b5-9272-95d635267fde.gif" /></a>
+            <a href="https://github.com/bitkunst"><img height="150px" width="200px" src="https://user-images.githubusercontent.com/69417234/171447135-a65ba6ea-2069-42b5-9272-95d635267fde.gif" /></a>
             <br />
             장재원 <br/>
         </td>
         <td align="center" width="120px" height="80px">
-            <a href="https://github.com/yjleeinkr"><img height="150px" width="150px" src="https://user-images.githubusercontent.com/69417234/171447140-c214cf08-8505-493d-a2e7-c32456eeea7a.gif" /></a>
+            <a href="https://github.com/yjleeinkr"><img height="150px" width="200px" src="https://user-images.githubusercontent.com/69417234/171447140-c214cf08-8505-493d-a2e7-c32456eeea7a.gif" /></a>
             <br />
             이연정
         </td>
